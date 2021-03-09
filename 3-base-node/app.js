@@ -1,11 +1,10 @@
+const {crearArchivo} = require('./helpers/multiplicar')
+
 console.clear();
 
-let tabla = 5;
+let tabla = 3;
 let hasta = 10;
-let salida = "";
 
-
-for (let i = 1; i <= hasta; i++){
-    salida += `${tabla} x ${i} = ${tabla*i}\n`;
-}
-console.log(salida);
+crearArchivo(tabla, hasta)
+    .then( nombreArchivo => console.log(nombreArchivo, 'creado'))
+    .catch(err => console.log(err))
