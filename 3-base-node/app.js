@@ -1,9 +1,15 @@
+const yargs = require('yargs');
 const {crearArchivo} = require('./helpers/multiplicar')
+const argv = require('yargs').argv;
 
 console.clear();
 
-let tabla = 3;
+console.log(argv);
+
+let tabla = argv.base;
 let hasta = 10;
+
+console.log(tabla);
 
 crearArchivo(tabla, hasta)
     .then( nombreArchivo => console.log(nombreArchivo, 'creado'))

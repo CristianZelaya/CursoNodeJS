@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^16.2.0"
+  },
+  "name": "3-base-node",
+  "version": "0.0.1",
+  "description": "proyecto de tablas",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristian Zelaya",
+  "license": "MIT"
+}
