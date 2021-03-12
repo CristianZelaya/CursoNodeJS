@@ -4,7 +4,7 @@ require('colors');
 const menuOpts = [
     {
         type: 'list',
-        name: 'opt',
+        name: 'opcion',
         message: '¿Qué desea hacer?',
         choices: [
             {
@@ -45,9 +45,8 @@ const inquirerMenu = async() =>{
     console.log('   Selecciones una opción'.green);
     console.log('============================\n'.green);
 
-    const {opt} = await inquirer.prompt(menuOpts);
-
-    return opt;
+    const {opcion} = await inquirer.prompt(menuOpts);
+    return opcion;
 }
 
 const pausa = async() =>{
@@ -62,7 +61,27 @@ const pausa = async() =>{
     await inquirer.prompt(question)
 }
 
+const leerInput = async(message)=>{
+    const question = [
+        {
+            type: 'imput',
+            name: 'desc',
+            message,
+            validate(value){
+                if(value.length === 0){
+                    return 'Por favor engrese un valor'
+                }
+                return true;
+            }
+        }
+    ];
+
+    const {desc} = await inquirer.prompt(question);
+    return desc;
+}
+
 module.exports = {
     inquirerMenu,
-    pausa
+    pausa,
+    leerInput
 }
